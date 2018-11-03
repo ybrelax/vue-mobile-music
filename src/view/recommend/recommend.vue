@@ -10,8 +10,8 @@
   
     <div v-for="item of swiperImgs" :key="item" style="
       text-align: center;
-  ">
-      <img :src="item.picUrl" style="width: 400px">
+    ">
+      <img :src="item.picUrl" style="width: 90%">
     </div>
   
   </div>
