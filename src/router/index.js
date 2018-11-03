@@ -9,5 +9,9 @@ export default new Router({
         path: '/',
         name: 'recommend',
         component: recommend
+    },{
+        path: '/recommend',
+        name: 'recommend',
+        component: recommend
     }]
 })

@@ -4,6 +4,8 @@
 
     <m-header></m-header>
 
+    <m-tab></m-tab>
+
     <router-view/>
   </div>
 
@@ -12,10 +14,12 @@
 <script>
 
 import MHeader from '@/view/header/header.vue'
+import MTab from '@/view/tab/tab.vue'
 export default {
   name: 'App',
   components: {
-    MHeader
+    MHeader,
+    MTab
   }
 }
 </script>
