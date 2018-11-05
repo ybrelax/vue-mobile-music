@@ -1,0 +1,34 @@
+.slider {
+    position: relative;
+    overflow: hidden;
+    .slider-group {
+        .slider-item {
+            display: inline-block;
+            text-align: center;
+            img {
+                width: 100%;
+                border-radius: .1rem;
+            }
+        }
+    }
+    .dots {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        bottom: 0.1rem;
+        .dot {
+            display: inline-block;
+            margin: 0 4px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ccc;
+        }
+        .active {
+            width: 20px;
+            border-radius: 5px;
+            background: #fff;
+        }
+    }
+}

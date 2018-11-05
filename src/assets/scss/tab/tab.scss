@@ -1,4 +1,6 @@
 .nav {
+    position: relative;
+    background: #34C17D;
     letter-spacing: -4px;
     padding: .4rem;
     a {
@@ -7,14 +9,15 @@
         letter-spacing: normal;
         text-align: center;
         text-decoration: none;
+        color: #fff;
         span {
             display: inline-block;
             width: 30%;
             padding-bottom: .2rem;
         }
         .nav-active {
-            border-bottom: 1px solid;
+            font-weight: bold;
+            border-bottom: 2px solid;
         }
-        
     }
 }
