@@ -53,7 +53,7 @@
         this.initSlider();
         this.initDots();
         this.onScrollEnd();
-      });
+      }, 200);
     },
 
     methods: {
@@ -63,6 +63,7 @@
         let sliderWidth = this.$refs.slider.clientWidth;
         for (let i = 0; i < this.children.length; i++) {
           const child = this.children[i];
+          console.log('')
           addClass(child, 'slider-item');
           child.style.width = sliderWidth + 'px';
           width += sliderWidth;
