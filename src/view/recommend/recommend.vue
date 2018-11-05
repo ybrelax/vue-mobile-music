@@ -1,7 +1,7 @@
 <template>
   <div class="recommend">
 
-    <scroll class="slider-wrapper">
+    <div class="slider-wrapper" :data = "recommendList">
 
       <div>
         <slider>
@@ -24,7 +24,7 @@
             <img :src="item.picUrl">
 
             <span class="img-text">
-                <i class = "fa fa-headphones"> </i> {{Math.floor(item.playCount / 1000/2)}}万
+                <i class = "fa fa-headphones"> </i> {{Math.floor(item.playCount / 1000)}}万
                 </span>
 
           </div>
@@ -34,7 +34,31 @@
 
       </ul>
 
-    </scroll>
+      <p class="song-sheet"> 推荐歌曲 </p>
+
+      <ul class="song-sheet-lit">
+
+        <li v-for = "(item, index) of recommendMusic" :key = "index">
+
+          <div class="img-ico">
+
+            <img :src="item.song.album.picUrl">
+
+            <span class="img-text">
+                <i class = "fa fa-headphones"> </i> {{Math.floor(item.playCount / 1000)}}万
+                </span>
+
+          </div>
+
+          <p class = "song-name"> {{item.song.name}}</p>
+
+          <p class = "singer-name"> <span v-for = "(sitem, sindex) of item.song.artists" :key = "sindex">{{sitem.name}}</span></p>
+
+        </li>
+
+      </ul>
+
+    </div>
 
   </div>
 </template>
@@ -51,12 +75,14 @@
     data() {
       return {
         swiperImgs: [],
-        recommendList: []
+        recommendList: [],
+        recommendMusic: []
       }
     },
     mounted() {
       this.getSwiperImgs();
       this.getRecommendList();
+      this.getRecommendMusic();
     },
 
     methods: {
@@ -71,6 +97,13 @@
         let _this = this;
         this.axios('/personalized').then(function (response) {
           _this.recommendList = response.data.result;
+        })
+      },
+
+      getRecommendMusic() {
+        let _this = this;
+        this.axios('/personalized/newsong').then(function (response) {
+          _this.recommendMusic = response.data.result;
         })
       }
     }

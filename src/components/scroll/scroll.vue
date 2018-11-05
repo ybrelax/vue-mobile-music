@@ -81,6 +81,7 @@ export default {
   watch: {
     data () {
       setTimeout(() => {
+        console.log('竟来了，骚年')
         this.refresh()
       }, this.refreshDelay)
     }

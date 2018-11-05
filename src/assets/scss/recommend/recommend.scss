@@ -1,9 +1,9 @@
 .recommend {
     position: relative;
-    padding-bottom: 2rem;
     .slider-wrapper {
         width: 9.5rem;
         margin: auto;
+        overflow: hidden;
     }
     .decorection {
         position: absolute;
@@ -42,6 +42,13 @@
             }
             .text {
                 height: .833333rem;
+                overflow: hidden;
+                font-size: .3rem;
+                color: #666;
+            }
+            .song-name,
+            .singer-name {
+                height: .433333rem;
                 overflow: hidden;
                 font-size: .3rem;
                 color: #666;
