@@ -1,7 +1,7 @@
 <template>
   <div class="recommend">
 
-    <div class="slider-wrapper" :data = "recommendList">
+    <scroll class="slider-wrapper" ref="scroll" :data = "recommendList">
 
       <div>
         <slider v-if = "swiperImgs.length > 0">
@@ -58,7 +58,7 @@
 
       </ul>
 
-    </div>
+    </scroll>
 
   </div>
 </template>

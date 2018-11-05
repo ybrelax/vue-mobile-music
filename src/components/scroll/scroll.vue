@@ -40,6 +40,7 @@ export default {
   },
   methods: {
     _initScroll () {
+      console.log('xx:', this.$refs.wrapper);
       if (!this.$refs.wrapper) {
         return
       }
@@ -49,12 +50,14 @@ export default {
       })
 
       if (this.listenScroll) {
+        console.log('122')
         let _this = this
         this.scroll.on('scroll', (pos) => {
           _this.$emit('scroll', pos)
         })
       }
       if (this.pullup) {
+        console.log('123')
         this.scroll.on('scrollEnd', () => {
           if (this.scroll.y <= (this.scroll.maxScrollY + 50)) {
             this.$emit('scrollToEnd')
