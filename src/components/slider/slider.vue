@@ -48,12 +48,10 @@
     },
 
     mounted() {
-      setTimeout(() => {
-        this.setSliderWidth();
-        this.initSlider();
-        this.initDots();
-        this.onScrollEnd();
-      }, 1000);
+      this.setSliderWidth();
+      this.initSlider();
+      this.initDots();
+      this.onScrollEnd();
     },
 
     methods: {

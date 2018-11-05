@@ -4,7 +4,7 @@
     <div class="slider-wrapper" :data = "recommendList">
 
       <div>
-        <slider>
+        <slider v-if = "swiperImgs.length > 0">
           <div v-for="(item, index) of swiperImgs" :key="index">
             <img :src="item.picUrl">
           </div>
