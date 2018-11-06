@@ -1,10 +1,17 @@
 .recommend {
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 88px;
+    bottom: 0;
+    z-index: 100;
+    .recommend-content {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
     .slider-wrapper {
         width: 9.5rem;
         margin: auto;
-        height: 100%;
-        overflow: hidden;
     }
     .decorection {
         position: absolute;
@@ -17,11 +24,14 @@
         vertical-align: inherit;
     }
     .song-sheet {
-        margin: .3rem 0;
+        width: 9.5rem;
+        margin: .3rem auto;
         font-weight: bold;
         font-size: .35rem;
     }
     .song-sheet-lit {
+        width: 9.5rem;
+        margin: auto;
         li {
             position: relative;
             display: inline-block;
