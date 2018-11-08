@@ -7,7 +7,7 @@
     
         </router-link>
     
-        <router-link to="/">
+        <router-link to="/rank">
     
             <span :class="routerPath == '/rank' ? 'nav-active' : '' ">排行 </span>
     

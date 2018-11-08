@@ -1,0 +1,25 @@
+.rank {
+    width: 9.5rem;
+    margin: auto;
+    .rank-ul {
+        li {
+            position: relative;
+            margin-top: .4rem;
+            div:first-child {
+                position: absolute;
+                left: 0;
+                width: 2.333333rem;
+                height: 1.333333rem;
+            }
+            div:last-child {
+                margin-left: 2.4rem;
+                border-bottom: .023333rem solid #999;
+                p {
+                    margin-bottom: .3rem;
+                    letter-spacing: .002rem;
+                    font-size: .4rem;
+                }
+            }
+        }
+    }
+}

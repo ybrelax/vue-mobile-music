@@ -8,7 +8,8 @@
     </div>
 
        <div class = "dots">
-          <span class = "dot" v-for="(item, index) in dots" :key = "index" :class="{'active' : currentPageIndex == index}"></span>
+          <span class = "dot" v-for="(item, index) in dots" :key = "index" :class="{'active' : currentPageIndex == index}">
+          </span>
       </div>
 
   </div>
@@ -57,6 +58,7 @@
     methods: {
       setSliderWidth() {
         this.children = this.$refs.sliderGroup.children;
+        console.log('length:', this.children.length);
         let width = 0;
         let sliderWidth = this.$refs.slider.clientWidth;
         for (let i = 0; i < this.children.length; i++) {
@@ -99,7 +101,8 @@
       },
 
       initDots() {
-        this.dots = new Array(this.children.length);
+        console.log('length1:', this.children.length);
+        this.dots = new Array(this.children.length - 2);
       },
 
       play() {
