@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import recommend from '@/view/recommend/recommend.vue'
 import rank from '@/view/rank/rank.vue'
+import singer from '@/view/singer/singer.vue'
 
 Vue.use(Router)
 
@@ -18,5 +19,9 @@ export default new Router({
         path: '/rank',
         name: 'rank',
         component: rank
+    }, {
+        path: '/singer',
+        name: 'singer',
+        component: singer
     }]
 })

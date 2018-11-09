@@ -1,0 +1,24 @@
+.singer {
+    .singer-content {
+        height: 100%;
+        .c-li {
+            p:first-child {
+                height: .533333rem;
+                background: rgb(217, 218, 219);
+            }
+            &>div {
+                position: relative;
+                img {
+                    position: absolute;
+                    left: 0;
+                    width: 1.933333rem;
+                    height: 1.666667rem;
+                }
+                p {
+                    margin-left: 2rem;
+                    line-height: .8rem;
+                }
+            }
+        }
+    }
+}
