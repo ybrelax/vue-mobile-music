@@ -1,6 +1,15 @@
 .rank {
-    width: 9.5rem;
-    margin: auto;
+    position: fixed;
+    width: 100%;
+    top: 2.2073333rem;
+    bottom: 0;
+    .rank-content {
+        width: 9.5rem;
+        height: 100%;
+        margin: auto;
+        margin-top: .4rem;
+        overflow: hidden;
+    }
     .rank-ul {
         li {
             position: relative;
@@ -8,16 +17,19 @@
             div:first-child {
                 position: absolute;
                 left: 0;
-                width: 2.333333rem;
+                width: 2.163333rem;
                 height: 1.333333rem;
+                img {
+                    width: 100%;
+                }
             }
             div:last-child {
-                margin-left: 2.4rem;
+                margin-left: 2.5rem;
                 border-bottom: .023333rem solid #999;
                 p {
                     margin-bottom: .3rem;
                     letter-spacing: .002rem;
-                    font-size: .4rem;
+                    font-size: .32rem;
                 }
             }
         }

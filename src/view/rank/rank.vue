@@ -1,33 +1,50 @@
 <template>
   <div class = "rank">
 
-    <ul class= "rank-ul">
-      <li>
+    <scroll class = "rank-content">
 
-        <div>
+      <div>
 
-        </div>
+        <ul class= "rank-ul">
+        
+          <li v-for = "(item, index) of rankList" :key = "index">
 
-        <div>
+            <div>
+                <img :src = "item.coverImgUrl">
+            </div>
 
-          <p> 1 </p>
+            <div>
 
-          <p> 2 </p>
+              <p v-for = "(sitem, sindex) of item.top" :key = "sindex"> 
+              
+              <span> {{sindex + 1}} </span> 
+              
+              <span> {{sitem.name}} - </span>
 
-          <p> 3 </p>
+              <span> {{sitem.ar[0].name}} </span>
 
-        </div>
+              </p>
 
-      </li>
+            </div>
 
-    </ul>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </scroll>
 
   </div>
 
 </template>
 
 <script>
+    import scroll from '@/components/scroll/scroll'
   export default {
+    components: {
+      scroll
+    },
     data () {
       return {
         rankList: []
@@ -35,14 +52,18 @@
     },
 
     mounted() {
-      this.getRankList();
+      for (let index = 0; index < 10; index++) {
+        this.getRankList(index);
+      }
     },
 
     methods: {
-      getRankList() {
+      getRankList(index) {
         let _this = this;
-        _this.axios.post('').then(function(response) {
-          _this.rankList = response.data.data;
+        _this.axios.get('/top/list?idx=' + index).then(function(response) {
+          let list = response.data.playlist;
+          list.top = response.data.playlist.tracks.slice(0, 3);
+          _this.rankList.push(list);
         })
       }
 
