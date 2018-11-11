@@ -7,13 +7,13 @@
 
       <li class = "c-li" v-for = "(item, index) of singerList" :key = "index" >
 
-        <p> 热门</p>
+        <p> {{item.name}}</p>
 
         <div>
 
-          <img>
+          <img :src  = "item.picUrl">
 
-          <p>  </p>
+          <p> {{item.name}}  </p>
 
         </div>
 
@@ -28,6 +28,7 @@
 </template>
 
 <script>
+  const pinyin = require("pinyin");
   export default{
     data () {
       return {
@@ -43,7 +44,12 @@
       getSingerList() {
         let _this = this;
         _this.axios('/top/artists?limit=100').then(function (response) {
-          _this.singerList = response.data.artists;
+          let list = response.data.artists;
+          list.map((item) => {
+            item.name[0], {
+              style: pinyin.STYLE_FIRST_LETTER
+            }
+          })
         })
       }
     }

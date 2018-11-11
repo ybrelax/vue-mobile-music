@@ -8,15 +8,20 @@
             }
             &>div {
                 position: relative;
+                height: 2.333333rem;
+                left: .15rem;
                 img {
                     position: absolute;
                     left: 0;
-                    width: 1.933333rem;
-                    height: 1.666667rem;
+                    width: 2.033333rem;
+                    height: 2.033333rem;
+                    border-radius: .053333rem;
+                   
                 }
                 p {
-                    margin-left: 2rem;
-                    line-height: .8rem;
+                    line-height: 2.333333rem;
+                    margin-left: 2.5rem;
+                    font-size: .32rem;
                 }
             }
         }
