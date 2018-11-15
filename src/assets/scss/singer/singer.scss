@@ -1,29 +1,56 @@
 .singer {
+    position: fixed;
+    width: 100%;
+    top: 2.2073333rem;
+    bottom: 0;
+    background: #F2F3F4;
+    .scroll-content {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
     .singer-content {
         height: 100%;
         .c-li {
             p:first-child {
                 height: .533333rem;
+                line-height: .533333rem;
+                padding-left: .3rem;
+                color: #fff;
                 background: rgb(217, 218, 219);
             }
             &>div {
                 position: relative;
-                height: 2.333333rem;
-                left: .15rem;
+                height: 2.233333rem;
+                margin-top: .15rem;
+                border-bottom: 1px solid #e4e4e4;
                 img {
                     position: absolute;
-                    left: 0;
+                    left: .2rem;
                     width: 2.033333rem;
                     height: 2.033333rem;
                     border-radius: .053333rem;
-                   
                 }
                 p {
-                    line-height: 2.333333rem;
+                    line-height: 2.233333rem;
                     margin-left: 2.5rem;
                     font-size: .32rem;
                 }
             }
+        }
+    }
+    &>.sortline {
+        position: fixed;
+        top: 3.2073333rem;
+        right: .15rem;
+        &>a {
+            display: block;
+            margin-top: .16rem;
+            text-decoration: none;
+            color: #757575;
+        }
+        .active {
+            color: #34C17D;
         }
     }
 }
