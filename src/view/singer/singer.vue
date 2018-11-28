@@ -49,6 +49,7 @@
             item.name[0], {
               style: pinyin.STYLE_FIRST_LETTER
             }
+            let py = pinyin(item.name)
           })
         })
       }
