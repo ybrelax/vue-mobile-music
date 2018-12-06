@@ -1,0 +1,52 @@
+.radio-detail {
+
+    .banner {
+        position: absolute;
+        top: 0;
+        z-index: 100;
+        height: 45vh;
+        width: 100%;
+        background: #C2C2C3;
+    }
+    img {
+        width: 100%;
+    }
+    ul {
+        position: absolute;
+        z-index: 1000;
+        top: 40vh;
+        width: 100%;
+ 
+        li:first-child {
+            height: .933333rem;
+            line-height: .933333rem;
+            padding-left: .5rem;
+            border-top: 1px solid #e4e4e4;
+            border-bottom: 1px solid #e4e4e4;
+            border-radius: 10px 10px 0 0;
+            background: #F2F3F4;
+            i {
+                vertical-align: sub;
+            }
+            span{
+                padding: .2rem;
+            }
+        }
+        li {
+            height: 1.2rem;
+            margin-top: .2rem;
+            padding-left: .5rem;
+            border-bottom: 1px solid #e4e4e4;
+            background: #F2F3F4;
+            span {
+            margin-top: .2rem;   
+            }
+            div {
+                display: inline-block;
+                padding-left: .2rem;
+            }
+        }
+        
+    }
+
+}

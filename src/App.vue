@@ -20,6 +20,17 @@ export default {
   components: {
     MHeader,
     MTab
+  },
+  data () {
+    return {
+      showTop: false
+    }
+  },
+  watch: {
+    $route (to, from) {
+      console.log(to, from);
+    }
+
   }
 }
 </script>

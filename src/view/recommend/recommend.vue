@@ -7,7 +7,7 @@
 
          <slider v-if="swiperImgs.length > 0" class = "slider-wrapper">
             <div v-for="(item, index) of swiperImgs" :key="index">
-              <img :src="item.picUrl">
+              <img :src="item.picUrl" @click = "routerGo">
             </div>
           </slider>
 
@@ -64,49 +64,53 @@
 </template>
 
 <script>
-  import scroll from '@/components/scroll/scroll'
-  import slider from '@/components/slider/slider'
+import scroll from '@/components/scroll/scroll'
+import slider from '@/components/slider/slider'
 
-  export default {
-    components: {
-      scroll,
-      slider
-    },
-    data() {
-      return {
-        swiperImgs: [],
-        recommendList: [],
-        recommendMusic: []
-      }
-    },
-    mounted() {
-      this.getSwiperImgs();
-      this.getRecommendList();
-      this.getRecommendMusic();
-    },
-
-    methods: {
-      getSwiperImgs() {
-        let _this = this;
-        this.axios('/banner').then(function(response) {
-          _this.swiperImgs = response.data.banners;
-        })
-      },
-
-      getRecommendList() {
-        let _this = this;
-        this.axios('/personalized').then(function(response) {
-          _this.recommendList = response.data.result;
-        })
-      },
-
-      getRecommendMusic() {
-        let _this = this;
-        this.axios('/personalized/newsong').then(function(response) {
-          _this.recommendMusic = response.data.result;
-        })
-      }
+export default {
+  components: {
+    scroll,
+    slider
+  },
+  data () {
+    return {
+      swiperImgs: [],
+      recommendList: [],
+      recommendMusic: []
     }
+  },
+  mounted () {
+    this.getSwiperImgs();
+    this.getRecommendList();
+    this.getRecommendMusic();
+  },
 
+  methods: {
+    routerGo () {
+      this.$router.push('/detail');
+    },
+
+    getSwiperImgs () {
+      let _this = this;
+      this.axios('/banner').then(function (response) {
+        _this.swiperImgs = response.data.banners;
+      })
+    },
+
+    getRecommendList () {
+      let _this = this;
+      this.axios('/personalized').then(function (response) {
+        _this.recommendList = response.data.result;
+      })
+    },
+
+    getRecommendMusic () {
+      let _this = this;
+      this.axios('/personalized/newsong').then(function (response) {
+        _this.recommendMusic = response.data.result;
+      })
+    }
   }
+
+}
 </script>

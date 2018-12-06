@@ -13,6 +13,7 @@
     .rank-ul {
         li {
             position: relative;
+            height: 2rem;
             margin-top: .4rem;
             div:first-child {
                 position: absolute;
@@ -25,6 +26,8 @@
                 }
             }
             div:last-child {
+                height: 2rem;
+                line-height: 2rem;
                 margin-left: 2.5rem;
                 border-bottom: .023333rem solid #999;
                 p {
