@@ -29,5 +29,7 @@ npm test
 
 # 说明
 
-分支开始
+分支开始 
+
+这是一个好的分支系统
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
